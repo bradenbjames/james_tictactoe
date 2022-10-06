@@ -1,12 +1,11 @@
-import javax.xml.namespace.QName;
-
 import cs331Helper.cs331TicTacToeBoard;
 import cs331Helper.cs331TicTacToeController;
 import cs331Helper.cs331TicTacToePlayer;
 
 public class Players implements cs331TicTacToePlayer {
-    public int maxTries;
-    String symbol = "";
+
+    private String symbol = "";
+
     cs331TicTacToeBoard sharedBoard = new cs331TicTacToeBoard();
     cs331TicTacToeController sharedController = new cs331TicTacToeController();
 
