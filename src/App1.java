@@ -17,14 +17,13 @@ public class App1 extends Application {
         Players p2 = new Players("O");
 
         cs331TicTacToeController controller1 = new cs331TicTacToeController();
+
         controller1.addPlayer(p1);
         controller1.addPlayer(p2);
 
-        p1.selectSquare(1, 1);
-        p2.selectSquare(2, 2);
-        p1.selectSquare(2, 1);
-        p2.selectSquare(0, 1);
-
+        p1.selectSquare(0, 0);
+        p1.selectSquare(0, 1);
+        p1.selectSquare(0, 2);
     }
 
     public static void main(String[] args) throws Exception {
