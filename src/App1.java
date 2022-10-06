@@ -17,11 +17,11 @@ public class App1 extends Application {
         Players p2 = new Players("O");
 
         cs331TicTacToeController controller1 = new cs331TicTacToeController();
-
         controller1.addPlayer(p1);
         controller1.addPlayer(p2);
 
-        controller1.setControllerMessage("Select a square to start playing");
+        // causing crash
+        // p1.selectSquare(1, 1);
 
     }
 
