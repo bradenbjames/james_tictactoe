@@ -21,6 +21,7 @@ public class Players implements cs331TicTacToePlayer {
     public void selectSquare(int arg0, int arg1) {
         cs331TicTacToeSquare a = sharedBoard.squareAt(arg0, arg1);
         a.markSquare(this.symbol);
-        a.flashColor(Color.GREEN);
+        cs331TicTacToeController cont = new cs331TicTacToeController();
+        cont.setControllerMessage("Player " + this.symbol + "finished their turn");
     }
 }
