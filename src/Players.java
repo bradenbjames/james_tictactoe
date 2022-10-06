@@ -14,6 +14,7 @@ public class Players implements cs331TicTacToePlayer {
 
     Players(String s) {
         this.symbol = s;
+        sharedController.setControllerMessage("Select a square to start playing");
     }
 
     @Override

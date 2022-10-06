@@ -21,6 +21,9 @@ public class App1 extends Application {
         controller1.addPlayer(p2);
 
         p1.selectSquare(1, 1);
+        p2.selectSquare(2, 2);
+        p1.selectSquare(2, 1);
+        p2.selectSquare(0, 1);
 
     }
 
