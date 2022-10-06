@@ -1,25 +1,23 @@
 import cs331Helper.cs331TicTacToeBoard;
-import cs331Helper.cs331TicTacToeController;
 import cs331Helper.cs331TicTacToePlayer;
 import cs331Helper.cs331TicTacToeSquare;
 
-public class Players implements cs331TicTacToePlayer {
+public class Players extends myTicTacToe implements cs331TicTacToePlayer {
 
-    private String symbol = "";
-
-    cs331TicTacToeBoard sharedBoard = new cs331TicTacToeBoard();
-    cs331TicTacToeController sharedController = new cs331TicTacToeController();
+    private String playerSymbol = "";
 
     Players(String s) {
-        this.symbol = s;
-        sharedController.setControllerMessage("Select a square to start playing");
+        this.playerSymbol = s;
     }
 
     @Override
     public void selectSquare(int arg0, int arg1) {
-        cs331TicTacToeSquare a = sharedBoard.squareAt(arg0, arg1);
-        a.markSquare(this.symbol);
-        cs331TicTacToeController cont = new cs331TicTacToeController();
-        cont.setControllerMessage("Player " + this.symbol + "finished their turn");
+        if (sharedBoard.squareAt(arg0, arg1) != null) {
+        }
+        cs331TicTacToeSquare sq = sharedBoard.squareAt(arg0, arg1);
+        sq.markSquare(this.playerSymbol);
+
+        sharedController.setControllerMessage("Player " + this.playerSymbol + "s turn is finished");
     }
+
 }
