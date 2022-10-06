@@ -10,7 +10,9 @@ public class myTicTacToe implements cs331TicTacToeGame {
     @Override
     public void invalidSquareChosen(int arg0, int arg1) {
         // TODO Auto-generated method stub
+        if (arg0 > 2) {
 
+        }
     }
 
     @Override

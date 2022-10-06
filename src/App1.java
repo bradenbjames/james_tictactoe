@@ -20,8 +20,7 @@ public class App1 extends Application {
         controller1.addPlayer(p1);
         controller1.addPlayer(p2);
 
-        // causing crash
-        // p1.selectSquare(1, 1);
+        p1.selectSquare(1, 1);
 
     }
 
