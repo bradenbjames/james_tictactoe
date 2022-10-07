@@ -24,7 +24,7 @@ public class myTicTacToe implements cs331TicTacToeGame {
 
     @Override
     public void noWinner() {
-        this.sharedController.setControllerMessage("it's a tie");
+        this.sharedController.setControllerMessage("It's a tie!");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class myTicTacToe implements cs331TicTacToeGame {
         this.sharedBoard.clearHighlights();
         this.sharedBoard.clearSymbols();
         this.sharedController.playAgain();
-        this.sharedController.setControllerMessage("Select a square to start playing");
+        this.sharedController.setControllerMessage("Select a square to start playing!");
     }
 
 }

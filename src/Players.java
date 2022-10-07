@@ -4,7 +4,6 @@ import cs331Helper.cs331TicTacToePlayer;
 import cs331Helper.cs331TicTacToeSquare;
 
 public class Players implements cs331TicTacToePlayer {
-
     private String playerIcon;
     cs331TicTacToeBoard currBoard;
     cs331TicTacToeController currController;
