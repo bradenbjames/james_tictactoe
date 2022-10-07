@@ -6,11 +6,10 @@ Welcome to the VS Code Java world. Here is a guideline to help you get started t
 
 The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-      -Players.java
-      -myTicTacToe.java
-      -App1.java
-- `lib`: the folder to maintain dependencies
+- `src`: the folder to maintain sources: 
+Players.java, myTicTacToe.java, App1.java
+- `lib`: the folder to maintain dependencies:
+- javafx, hw2.jar
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
