@@ -1,23 +1,26 @@
 import cs331Helper.cs331TicTacToeBoard;
 import cs331Helper.cs331TicTacToeController;
 import cs331Helper.cs331TicTacToeGame;
-import cs331Helper.cs331TicTacToePlayer;
+import javafx.scene.paint.Color;
 
 public class myTicTacToe implements cs331TicTacToeGame {
 
-    cs331TicTacToeController sharedController = new cs331TicTacToeController();
-    cs331TicTacToeBoard sharedBoard = new cs331TicTacToeBoard();
+    cs331TicTacToeController sharedController;
+    cs331TicTacToeBoard sharedBoard;
 
     public myTicTacToe() {
-        this.sharedController.setControllerMessage("Select a square to start playing");
+        this.sharedBoard = new cs331TicTacToeBoard();
+        this.sharedController = new cs331TicTacToeController();
+        this.sharedController.setControllerMessage("Select a square to start playing!");
+        this.sharedController.addPlayer(new Players("X", this.sharedBoard, this.sharedController));
+        this.sharedController.addPlayer(new Players("O", this.sharedBoard, this.sharedController));
     }
 
     @Override
-    public void invalidSquareChosen(int arg0, int arg1) {
+    public void invalidSquareChosen(int row, int col) {
         // TODO Auto-generated method stub
-        if (arg0 > 2 || arg1 > 2) {
-            this.sharedController.setControllerMessage("invalid square chosen");
-        }
+        sharedBoard.squareAt(row, col).flashColor(Color.BLUE);
+
     }
 
     @Override
@@ -29,7 +32,8 @@ public class myTicTacToe implements cs331TicTacToeGame {
     @Override
     public void playerWins() {
         // TODO Auto-generated method stub
-        cs331TicTacToePlayer player = this.sharedController.getWinningPlayer();
+        Players player = (Players) this.sharedController.getWinningPlayer();
+        sharedController.setControllerMessage(player.getPlayerSymbol() + " wins!");
     }
 
     @Override
@@ -38,7 +42,6 @@ public class myTicTacToe implements cs331TicTacToeGame {
         this.sharedBoard.clearHighlights();
         this.sharedBoard.clearSymbols();
         this.sharedController.playAgain();
-        // not working...
         this.sharedController.setControllerMessage("Select a square to start playing");
     }
 
