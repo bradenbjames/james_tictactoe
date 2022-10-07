@@ -4,10 +4,10 @@ import cs331Helper.cs331TicTacToeGame;
 import javafx.scene.paint.Color;
 
 public class myTicTacToe implements cs331TicTacToeGame {
-
     cs331TicTacToeController sharedController;
     cs331TicTacToeBoard sharedBoard;
 
+    // initialize game with Players
     public myTicTacToe() {
         this.sharedBoard = new cs331TicTacToeBoard();
         this.sharedController = new cs331TicTacToeController();
@@ -18,27 +18,25 @@ public class myTicTacToe implements cs331TicTacToeGame {
 
     @Override
     public void invalidSquareChosen(int row, int col) {
-        // TODO Auto-generated method stub
+        // flash invalid square selection on board
         sharedBoard.squareAt(row, col).flashColor(Color.BLUE);
-
     }
 
     @Override
     public void noWinner() {
-        // not working
         this.sharedController.setControllerMessage("it's a tie");
     }
 
     @Override
     public void playerWins() {
-        // TODO Auto-generated method stub
+        // capture reference to winning player, set controller message
         Players player = (Players) this.sharedController.getWinningPlayer();
         sharedController.setControllerMessage(player.getPlayerSymbol() + " wins!");
     }
 
     @Override
     public void restartGame() {
-        // TODO Auto-generated method stub
+        // clear board, clear symbols, sets controller message
         this.sharedBoard.clearHighlights();
         this.sharedBoard.clearSymbols();
         this.sharedController.playAgain();

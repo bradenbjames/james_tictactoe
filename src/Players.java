@@ -9,20 +9,23 @@ public class Players implements cs331TicTacToePlayer {
     cs331TicTacToeBoard currBoard;
     cs331TicTacToeController currController;
 
-    Players(String s, cs331TicTacToeBoard currentBoard, cs331TicTacToeController currentController) {
+    // initializes on player creation
+    Players(String s, cs331TicTacToeBoard currBoard, cs331TicTacToeController currController) {
         this.playerIcon = s;
-        this.currBoard = currentBoard;
-        this.currController = currentController;
+        this.currBoard = currBoard;
+        this.currController = currController;
     }
 
     @Override
     public void selectSquare(int arg0, int arg1) {
+        // select square on board
         cs331TicTacToeSquare sq = currBoard.squareAt(arg0, arg1);
         sq.markSquare(this.playerIcon);
         currController.setControllerMessage("Player " + this.playerIcon + "s turn is finished");
         currController.finishedTurn();
     }
 
+    // return this players icon
     public String getPlayerSymbol() {
         return this.playerIcon;
     }
